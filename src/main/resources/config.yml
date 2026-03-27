@@ -1,0 +1,23 @@
+upward-growth-plants:
+  - SUGAR_CANE
+  - CACTUS
+  - BAMBOO
+  - KELP
+  - KELP_PLANT
+  - TWISTING_VINES
+  - TWISTING_VINES_PLANT
+
+downward-growth-plants:
+  - VINE
+  - WEEPING_VINES
+  - WEEPING_VINES_PLANT
+  - CAVE_VINES
+  - CAVE_VINES_PLANT
+
+shear-sound-plants:
+  - SUGAR_CANE
+  - CACTUS
+
+messages:
+  disable-growth: '§bIpacEL §f> §b已停止植物生长'
+  enable-growth: '§bIpacEL §f> §a已恢复植物生长'

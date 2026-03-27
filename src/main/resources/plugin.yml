@@ -1,0 +1,25 @@
+name: IpacGrowthControl
+version: '1.0-SNAPSHOT'
+main: io.github.aplini.IpacGrowthControl.IpacGrowthControl
+api-version: '1.21'
+authors: [ ApliNi ]
+website: https://github.com/aplini/
+
+commands:
+  igc:
+    description: IpacGrowthControl 插件的主命令
+    usage: /<command>
+
+permissions:
+
+  IpacGrowthControl.reload:
+    description: '重载插件'
+    default: op
+
+  IpacGrowthControl.chunk:
+    description: '查看当前区块停止生长的植物'
+    default: op
+
+  IpacGrowthControl.clear:
+    description: '恢复当前区块停止生长的植物'
+    default: op
