@@ -54,6 +54,7 @@ upward-growth-plants:
   - KELP_PLANT
   - TWISTING_VINES
   - TWISTING_VINES_PLANT
+  - BAMBOO_SAPLING
 
 downward-growth-plants:
   - VINE
@@ -61,6 +62,7 @@ downward-growth-plants:
   - WEEPING_VINES_PLANT
   - CAVE_VINES
   - CAVE_VINES_PLANT
+  - GLOW_BERRIES
 
 shear-sound-plants:
   - SUGAR_CANE

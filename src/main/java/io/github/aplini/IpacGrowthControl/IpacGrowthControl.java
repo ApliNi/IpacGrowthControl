@@ -15,6 +15,7 @@ import org.bukkit.event.block.BlockBurnEvent;
 import org.bukkit.event.block.BlockExplodeEvent;
 import org.bukkit.event.block.BlockFadeEvent;
 import org.bukkit.event.block.BlockGrowEvent;
+import org.bukkit.event.block.BlockPhysicsEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.block.BlockSpreadEvent;
 import org.bukkit.event.entity.EntityChangeBlockEvent;
@@ -155,6 +156,12 @@ public final class IpacGrowthControl extends JavaPlugin implements Listener {
     }
 
     @EventHandler(ignoreCancelled = true)
+    public void onBlockPhysics(BlockPhysicsEvent event) {
+        Block block = event.getBlock();
+        Bukkit.getScheduler().runTask(this, () -> clearLockIfPlantMissing(block));
+    }
+
+    @EventHandler(ignoreCancelled = true)
     public void onBlockExplode(BlockExplodeEvent event) {
         clearLocks(event.blockList());
     }
@@ -257,6 +264,13 @@ public final class IpacGrowthControl extends JavaPlugin implements Listener {
         if (container.has(key, PersistentDataType.BYTE)) {
             container.remove(key);
         }
+    }
+
+    private void clearLockIfPlantMissing(Block block) {
+        if (getGrowthDirection(block.getType()) != null) {
+            return;
+        }
+        clearLock(block);
     }
 
     private void setLock(Block block, boolean locked) {
